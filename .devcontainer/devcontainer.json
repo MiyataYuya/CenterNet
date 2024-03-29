@@ -1,0 +1,23 @@
+{
+    "name": "CenterNet",
+    "build": {
+        "dockerfile": "../docker/Dockerfile",
+        "context": "..",
+        "args": {
+            "UID": "1000",
+            "GID": "1000"
+        }
+    },
+    "runArgs": [
+        "--gpus=all",
+        "--shm-size=64g"
+    ],
+    "mounts": [
+        {
+            "source": "/mnt/d/dataset/",
+            "target": "/workspaces/CenterNet/dataset",
+            "type": "bind"
+        }
+    ],
+    "workspaceFolder": "/workspaces/CenterNet"
+}
